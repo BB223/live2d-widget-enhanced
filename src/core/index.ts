@@ -384,7 +384,7 @@ function getWelcomeMsg(opt: WidgetInitOptions, tips: Tips): string {
     opt.titleSeparator ?? ((title: string): string => title.split(' - ')[0]);
 
   // Basic text
-  const text: string = `欢迎阅读<span>「${separator(document.title)}」</span>`;
+  const text: string = `Welcome to read <span>「${separator(document.title)}」</span>`;
 
   // If has referer
   if (document.referrer !== '') {
@@ -405,9 +405,9 @@ function getWelcomeMsg(opt: WidgetInitOptions, tips: Tips): string {
 
     // If known domain
     if (domain in domains) {
-      return `Hello！来自 <span>${domains[domain]}</span> 的朋友<br>${text}`;
+      return `Hello！Friends of <span>${domains[domain]}</span> <br>${text}`;
     } else {
-      return `Hello！来自 <span>${referrer.hostname}</span> 的朋友<br>${text}`;
+      return `Hello! Friends of <span>${referrer.hostname}</span> <br>${text}`;
     }
   }
 
